@@ -46,8 +46,8 @@
 
 ## Version 3- changes from V2:
 
-- add a global dictionary map for a split from a list into two sub lists.  This will be used to keep track what numbers being used and what numbers remaining
-- add a global dictionary map for every permutation with its block sum value
+# - add a global dictionary map for a split from a list into two sub lists.  This will be used to keep track what numbers being used and what numbers remaining
+# - add a global dictionary map for every permutation with its block sum value
 
 
 # In[192]:
@@ -323,7 +323,7 @@ def generate_solutions(row_sums,col_sums, n):
 
 def print_matrix(sol):
     for col in sol:
-        print(col)
+        print(col, flush=True)
         
 def solve_sumaddle_puzzle(row_sums, col_sums):
     n = len(row_sums)
@@ -331,10 +331,10 @@ def solve_sumaddle_puzzle(row_sums, col_sums):
     initialize_row_sum_map(n)
     sol = generate_solutions(row_sums,col_sums, n)    
     if sol:
-        print(f"Solution for a {n}x{n} with row constraint:{row_sums}, and column constraint:{col_sums}")
+        print(f"Solution for a {n}x{n} with row constraint:{row_sums}, and column constraint:{col_sums}", flush=True)
         print_matrix(sol)
     else:
-        print("No solution")    
+        print("No solution", flush=True)    
 
 
 # In[193]:
@@ -343,7 +343,7 @@ def solve_sumaddle_puzzle(row_sums, col_sums):
 import time
 start_time = time.time()
 solve_sumaddle_puzzle([3, 1, 0, 2], [3, 0, 0,0])
-print(f"Run time: {time.time() - start_time} seconds")
+print(f"Run time: {time.time() - start_time} seconds", flush=True)
 
 
 # In[194]:
@@ -352,7 +352,7 @@ print(f"Run time: {time.time() - start_time} seconds")
 import time
 start_time = time.time()
 solve_sumaddle_puzzle([5, 0, 5, 6, 0], [0, 6, 3, 0, 3])
-print(f"Run time: {time.time() - start_time} seconds")
+print(f"Run time: {time.time() - start_time} seconds", flush=True)
 
 
 # In[195]:
@@ -360,7 +360,7 @@ print(f"Run time: {time.time() - start_time} seconds")
 
 start_time = time.time()
 solve_sumaddle_puzzle([5, 1, 0, 5, 0], [2, 1, 0, 0, 6])
-print(f"Run time: {time.time() - start_time} seconds")
+print(f"Run time: {time.time() - start_time} seconds", flush=True)
 
 
 # In[196]:
@@ -368,7 +368,7 @@ print(f"Run time: {time.time() - start_time} seconds")
 
 start_time = time.time()
 solve_sumaddle_puzzle([9, 2, 4, -1 ,-1 , 3],  [7, 10, 2, -1,-1 , -1])
-print(f"Run time: {time.time() - start_time} seconds")
+print(f"Run time: {time.time() - start_time} seconds", flush=True)
 
 
 # In[ ]:
